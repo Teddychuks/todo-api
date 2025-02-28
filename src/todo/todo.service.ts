@@ -18,6 +18,7 @@ export class TodoService implements OnModuleInit {
   private todoService: ITodoService;
 
   onModuleInit() {
+    console.log(`Attempting to connect to gRPC service at: ${process.env.GRPC_URL}`);
     this.todoService = this.client.getService<ITodoService>('TodoService');
   }
 
